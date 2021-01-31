@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "json_schema/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "json_schema"
+  spec.name          = "json_schema_transformer"
   spec.version       = JsonSchema::VERSION
   spec.authors       = ["Narendran"]
   spec.email         = ["narendranvelmurugan06@gmail.com"]

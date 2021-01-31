@@ -7,7 +7,7 @@ Json Schema Generator is to describe the structure and validation constraints of
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'json_schema'
+gem 'json_schema_transformer', '~> 0.1.0'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install json_schema
+    $ gem install json_schema_transformer
 
 ## Usage
 
