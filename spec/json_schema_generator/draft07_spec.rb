@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 require 'json'
-require 'json_schema/version'
-require 'json_schema/Constants'
-require 'json_schema/draft07'
+require 'json_schema_generator/version'
+require 'json_schema_generator/Constants'
+require 'json_schema_generator/draft07'
 
 RSpec.describe JsonSchema::Draft07 do
   describe 'Success' do

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require 'json'
-require 'json_schema/version'
-require 'json_schema/Constants'
-require 'json_schema/draft07'
+require 'json_schema_generator/version'
+require 'json_schema_generator/Constants'
+require 'json_schema_generator/draft07'
 
-module JsonSchema
+module JsonSchemaGenerator
   class << self
     include Constants
     def generate(json_data, options = {})

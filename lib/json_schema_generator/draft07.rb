@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-require 'json_schema/draft_constants'
+require 'json_schema_generator/draft_constants'
 
-module JsonSchema
+module JsonSchemaGenerator
   class Draft07
     include DraftConstants
     def initialize(raw_json, options = {})
