@@ -20,7 +20,38 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+input = {name: 'naren', role:[{id: 1, name: 'backend'}, {id: 2, name: 'frontend'}]} // provide JSON input
+JsonSchema.generate(input)
+
+Output:
+{"title"=>"The root schema", "description"=>"The root schema comprises the entire JSON document.", "$schema"=>"http://json-schema.org/draft-07/schema", "type"=>"object", "required"=>["name", "role"], "properties"=>{"name"=>{"type"=>"string"}, "role"=>{"type"=>"array", "items"=>{"type"=>"object", "required"=>["id", "name"], "properties"=>{"id"=>{"type"=>"integer"}, "name"=>{"type"=>"string"}}}}}}
+```
+## Optional Parameters:
+
+Array validations
+```
+Input:
+{:data=>[{:id=>"1", :type=>"type1", :attributes=>{:message=>"Message", :status=>"pending"}}, {:id=>"2", :something=>"typ2", :attributes=>{:name=>"Name1", :activity=>"None"}}]} 
+
+```
+## To return array first element Schema:
+```
+To return Array first element's Schema:
+JsonSchema.generate(input, array_validations: :first_element)
+
+Output: {"title"=>"The root schema", "description"=>"The root schema comprises the entire JSON document.", "$schema"=>"http://json-schema.org/draft-07/schema", "type"=>"object", "required"=>["data"], "properties"=>{"data"=>{"type"=>"array", "items"=>{"type"=>"object", "required"=>["id", "type", "attributes"], "properties"=>{"id"=>{"type"=>"string"}, "type"=>{"type"=>"string"}, "attributes"=>{"type"=>"object", "required"=>["message", "status"], "properties"=>{"message"=>{"type"=>"string"}, "status"=>{"type"=>"string"}}}}}}}}
+```
+## To return Entire Array Schema:
+
+```
+
+JsonSchema.generate(input, array_validations: :any_of)
+
+Output: {"title"=>"The root schema", "description"=>"The root schema comprises the entire JSON document.", "$schema"=>"http://json-schema.org/draft-07/schema", "type"=>"object", "required"=>["data"], "properties"=>{"data"=>{"type"=>"array", "items"=>{"anyOf"=>[{"type"=>"object", "required"=>["id", "type", "attributes"], "properties"=>{"id"=>{"type"=>"string"}, "type"=>{"type"=>"string"}, "attributes"=>{"type"=>"object", "required"=>["message", "status"], "properties"=>{"message"=>{"type"=>"string"}, "status"=>{"type"=>"string"}}}}}, {"type"=>"object", "required"=>["id", "something", "attributes"], "properties"=>{"id"=>{"type"=>"string"}, "something"=>{"type"=>"string"}, "attributes"=>{"type"=>"object", "required"=>["name", "activity"], "properties"=>{"name"=>{"type"=>"string"}, "activity"=>{"type"=>"string"}}}}}]}}}} 
+
+
+```
 
 ## Development
 
