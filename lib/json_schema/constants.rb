@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module JsonSchemaGenerator
+module JsonSchema
   module Constants
     DRAFT7 = 'draft-07'
 
@@ -12,6 +12,6 @@ module JsonSchemaGenerator
 
     DEFAULT_ARRAY_VALIDATION = :first_element
 
-    SCHEMA_CLASS = {'draft-07' => 'JsonSchemaGenerator::Draft07'}
+    SCHEMA_CLASS = {'draft-07' => 'JsonSchema::Draft07'}
   end
 end

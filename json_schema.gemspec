@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "json_schema_generator/version"
+require "json_schema/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "json_schema_generator"
-  spec.version       = JsonSchemaGenerator::VERSION
+  spec.name          = "json_schema"
+  spec.version       = JsonSchema::VERSION
   spec.authors       = ["Narendran"]
   spec.email         = ["narendranvelmurugan06@gmail.com"]
 
