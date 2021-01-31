@@ -1,4 +1,4 @@
-# JsonSchema
+# Json Schema Generator
 
 Json Schema Generator is to describe the structure and validation constraints of your JSON documents. There are many json-schema validators, but only few generators. This library is intended to provide Ruby with an interface for validating JSON objects against a JSON schema conforming to JSON Draft7.
 
